@@ -18,28 +18,31 @@ function parseText () {
 
     for (var i = 0; i < preambleArray.length; i++)
 
-    //    if (preambleArray[i].endsWith("e") && preambleArray[i].startsWith("t")){
-    //     bothCounter += 1;
 
-    // }
-      if (preambleArray[i].endsWith("e") || preambleArray[i].endsWith("e,")) {
-        eEndCounter += 1;
+      // if (preambleArray[i].endsWith("e") || preambleArray[i].endsWith("e,")) {
+      //   eEndCounter += 1;
+      // }
+
+      // if (preambleArray[i].startsWith("t")){
+      //   tStartCounter += 1;
+      // }
+
+      if (preambleArray[i].startsWith("t") && preambleArray[i].endsWith("e")) {
+        bothCounter+= 1;
       }
 
-      // else if (preambleArray[i].startsWith("t")){
-      //   tStartCounter += 1;
-
-      // }
-      // else {
-      //   otherWordsCounter += 1;
-      // }
 
 
 
-   console.log(eEndCounter);
+
+   // console.log(eEndCounter);
    // console.log(tStartCounter);
-   // console.log(bothCounter);
-   document.getElementById('endE').innerText = eEndCounter;
+   console.log(bothCounter);
+  document.getElementById('endE').innerText = eEndCounter;
+  document.getElementById('startT').innerText = tStartCounter;
+  document.getElementById('both').innerText = bothCounter;
+
+
 
 
 };
