@@ -1,7 +1,12 @@
 
 
 var button = document.getElementById("parseBtn");
+// I set up a button to run the function that will parse the Preamble when I'm ready for it to be parsed
 var preambleNow = document.getElementById('preamble').innerText.toLowerCase().replace(/[^\w\s]|_/g, "");
+/* Because the StartsWith and EndsWith methods are case sensitive, I needed to find a way to covert all the text to lowercase since Tranquility is capitalized in the Preamble.
+I also needed to remove the commas to make the methods work as well. This replace method accomplishes that goa.
+ */
+
 var tStartCounter = 0;
 var eEndCounter = 0;
 var bothCounter = 0;
@@ -9,7 +14,7 @@ button.addEventListener("click", parseText);
 
 
 function parseText () {
-  console.log("this is the preamble", preambleNow)
+  console.log("Hi Christian!")
   var preambleArray = preambleNow.split(" ");
   console.log("this is the preamble now", preambleArray)
   console.log("here's the length of the preamble", preambleArray.length);
