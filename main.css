@@ -5,7 +5,6 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-style: bold;
 }
 
 #preamble {
@@ -30,4 +29,6 @@ font-size: 1.25em;
     color: white;
 }
 
-
+#numbers {
+  font-weight: bold;
+}
