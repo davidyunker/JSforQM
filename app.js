@@ -3,8 +3,8 @@
 var button = document.getElementById("parseBtn");
 // I set up a button to run the function that will parse the Preamble when I'm ready for it to be parsed
 var preambleNow = document.getElementById('preamble').innerText.toLowerCase().replace(/[^\w\s]|_/g, "");
-/* Because the StartsWith and EndsWith methods are case sensitive, I needed to find a way to covert all the text to lowercase since Tranquility is capitalized in the Preamble.
-I also needed to remove the commas to make the methods work as well. This replace method accomplishes that goa.
+/* Because the StartsWith and EndsWith methods are case sensitive, I needed to find a way to covert all the text to lowercase since Tranquility, Justice and Welfare is capitalized in the Preamble.
+I also needed to remove the commas to make the methods work as well. This replace method accomplishes that goal for me.
  */
 
 var tStartCounter = 0;
@@ -20,31 +20,30 @@ function parseText () {
   console.log("here's the length of the preamble", preambleArray.length);
 
     for (var i = 0; i < preambleArray.length; i++)
-
-    if (preambleArray[i].startsWith("t")){
-        tStartCounter += 1;
-      }
+{
 
 
-    for (var i = 0; i < preambleArray.length; i++)
-
-      if  (preambleArray[i].endsWith("e")) {
-        eEndCounter += 1;
-      }
-
-
-      for (var i = 0; i < preambleArray.length; i++)
-
-
-      if (preambleArray[i].startsWith("t") && preambleArray[i].endsWith("e")) {
+    if (preambleArray[i].startsWith("t") && preambleArray[i].endsWith("e")) {
         bothCounter+= 1;
+        tStartCounter+= 1;
+        eEndCounter+= 1;
       }
+    else if (preambleArray[i].startsWith("t")) {
+              tStartCounter += 1;
 
 
+    }
+
+    else if (preambleArray[i].endsWith("e")) {
+              eEndCounter += 1;
 
 
+    }
+    else {
+      console.log("Not a word I care about")
+    }
 
-
+}
 
    console.log(eEndCounter);
    console.log(tStartCounter);
