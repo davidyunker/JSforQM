@@ -51,8 +51,10 @@ function parseText () {
   document.getElementById('endE').innerText = eEndCounter;
   document.getElementById('startT').innerText = tStartCounter;
   document.getElementById('both').innerText = bothCounter;
+  document.getElementById("parseBtn").disabled = true;
 
 
+// Disabled the button after it's parsed the text so that the numbers stay correct.
 
 
 };
